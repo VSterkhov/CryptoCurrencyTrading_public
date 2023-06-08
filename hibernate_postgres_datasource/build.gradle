@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':common_trade')
+    compile libraries.hibernate
+    compile libraries.postgresql
+}

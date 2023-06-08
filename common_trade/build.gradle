@@ -1,0 +1,8 @@
+dependencies {
+    compile libraries.bson
+    compile 'org.scala-lang:scala-library:2.12.15'
+    compile libraries.hibernate
+
+    testImplementation 'org.scalatest:scalatest_2.12:3.2.3'
+    testImplementation 'org.scalatestplus:junit-4-13_2.12:3.2.8.0'
+}

@@ -1,0 +1,6 @@
+rootProject.name = 'CryptoCurrencyTrading'
+include 'binance_kafka_producer'
+include 'common_trade'
+include 'aggregator_kafka_consumer'
+include 'hibernate_postgres_datasource'
+

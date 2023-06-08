@@ -1,0 +1,8 @@
+/.gradle/*
+/.idea/*
+/binance_kafka_producer/build
+/common_trade/build
+/spark_kafka_consumer/build
+# Project exclude paths
+/aggregator_kafka_consumer/build/
+/hibernate_postgres_datasource/build/

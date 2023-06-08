@@ -1,0 +1,17 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+mainClassName = "ru.broom.aggregator_kafka_consumer.Main"
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.12.15'
+
+    compile libraries.kafka_clients
+    compile libraries.kafka_connect_json
+    compile libraries.jackson_databind
+    compile libraries.rxscala
+
+    compile project(':common_trade')
+    compile project(':hibernate_postgres_datasource')
+}

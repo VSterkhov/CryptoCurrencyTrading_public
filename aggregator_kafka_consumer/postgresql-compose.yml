@@ -1,0 +1,34 @@
+version: '3.9'
+
+volumes:
+  postgres-coin-broker:
+
+networks:
+  coin-broker-net:
+
+services:
+
+  postgres-coin-broker:
+    image: postgres:13.11
+    container_name: postgres-coin-broker
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres-coin-broker:/var/lib/postgresql/data
+    networks:
+      - coin-broker-net
+
+  aggregator_kafka_consumer:
+    image: sterkhov/aggregator_kafka_consumer
+    container_name: aggregator_kafka_consumer
+    hostname: aggregator_kafka_consumer
+    environment:
+      BOOTSTRAP_SERVERS_CONFIG: 'broker:9092'
+    depends_on:
+      - postgres-coin-broker
+    networks:
+      - coin-broker-net
